@@ -1,7 +1,7 @@
 cordovaHTTP
 ==================
 
-Cordova / Phonegap plugin for communicating with HTTP servers.  Supports iOS and Android.
+Cordova / Phonegap plugin for communicating with HTTP servers.  Supports iOS and Android. Forked from /wymsee/cordova-HTTP
 
 ## Advantages over Javascript requests
 
