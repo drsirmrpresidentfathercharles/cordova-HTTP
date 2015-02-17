@@ -40,7 +40,7 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
             catch(HttpRequestException e) {
              
             }
-            response.put("headers",rheaders);
+            response.put("rheaders",rheaders);
             response.put("status", code);
             if (code >= 200 && code < 300) {
                 response.put("data", body);
