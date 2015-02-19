@@ -3191,7 +3191,16 @@ public class HttpRequest {
     }
     return this;
   }
-
+  public HttpRequest form(final Object dataString,final Object fillerString,final Object fillerString2) throws HttpRequestException{
+    try {
+      openOutput();
+      output.write(dataString.toString());
+    }
+    catch (IOException e) {
+      throw new HttpRequestException(e);
+    }
+    return this;
+  }
   /**
    * Write the values in the map as encoded form data to the request body
    *
