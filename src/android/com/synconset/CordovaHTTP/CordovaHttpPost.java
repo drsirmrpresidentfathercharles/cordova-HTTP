@@ -35,7 +35,7 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
             }
             else {
              request.form(this.getParams().get("dataString"),"","");
-             rheaders.put(this.getParams().get("dataString"));
+             rheaders.put("hello",this.getParams().get("dataString"));
             }
             int code = request.code();
             String body = request.body(CHARSET);
