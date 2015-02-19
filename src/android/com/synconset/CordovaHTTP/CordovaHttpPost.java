@@ -29,11 +29,11 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
             this.setupSecurity(request);
             request.acceptCharset(CHARSET);
             request.headers(this.getHeaders());
-            try {
-             request.form(this.getParams().get("dataString"),"","");
-            }
-            catch (JSONException e) {
+            if(this.getParams().get("dataString") == null) {
              request.form(this.getParams());
+            }
+            else {
+             request.form(this.getParams().get("dataString"),"","");
             }
             int code = request.code();
             String body = request.body(CHARSET);
