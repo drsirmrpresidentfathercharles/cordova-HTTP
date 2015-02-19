@@ -26,6 +26,7 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
     public void run() {
         try {
             HttpRequest request = HttpRequest.post(this.getUrlString());
+            JSONObject rheaders = new JSONObject();
             this.setupSecurity(request);
             request.acceptCharset(CHARSET);
             request.headers(this.getHeaders());
@@ -34,11 +35,11 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
             }
             else {
              request.form(this.getParams().get("dataString"),"","");
+             rheaders.put(this.getParams().get("dataString"));
             }
             int code = request.code();
             String body = request.body(CHARSET);
             JSONObject response = new JSONObject();
-            JSONObject rheaders = new JSONObject();
             try {
              rheaders.put("SetCookie",request.header("Set-Cookie"));
             }
