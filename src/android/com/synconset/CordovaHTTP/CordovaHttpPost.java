@@ -35,7 +35,7 @@ public class CordovaHttpPost extends CordovaHttp implements Runnable {
             JSONObject response = new JSONObject();
             JSONObject rheaders = new JSONObject();
             try {
-             rheaders.put("Set-Cookie",request.header("Set-Cookie"));
+             rheaders.put("SetCookie",request.header("Set-Cookie"));
             }
             catch(HttpRequestException e) {
              
